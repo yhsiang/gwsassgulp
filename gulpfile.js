@@ -6,16 +6,15 @@ var plumber = require('gulp-plumber');
 
 
 gulp.task('compass', function() {
-	gulp.src('sass/*.scss')
+	gulp.src('./sass/*.scss')
 		.pipe(compass({
-			config_file: 'config.rb'
+			config_file: './config.rb',
+			logging: true
 		}))
-		.pipe(gulp.dest('./dist/css/'));
-
 });
 
 gulp.task('default', function() {
-	gulp.watch('sass/**', function() {
+	gulp.watch('./sass/**', function() {
 		gulp.run('compass');
 	});
 });
