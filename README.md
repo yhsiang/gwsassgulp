@@ -7,4 +7,4 @@ Run:
 'npm install'
 'gulp'
 
-One default tasks, watches/compiles sass files.
+One default task, watches/compiles sass files.
