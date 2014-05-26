@@ -9,13 +9,14 @@ var imagemin = require('gulp-imagemin');
 
 gulp.task('compass', function() {
 	gulp.src('./sass/*.scss')
+		.pipe(plumber())
 		.pipe(compass({
 			config_file: './config.rb',
 			logging: true
 		}))
 });
 
-gulp.task('default', function() {
+gulp.task('default', ['compass'], function() {
 	gulp.watch('./sass/**', function() {
 		gulp.run('compass');
 	});
